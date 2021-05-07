@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Great Vibes' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="LoginDiv">
+        <h1 class="text-center title">Join the Chat</h1>
+        <br>
+        <div class="form-group">
+            <input type="text" class="form-control" id="username" placeholder="Nickname">
+        </div>
+        <button id="btnStart" class="btn btn-info btn-lg btn-block">Join</button>
+    </div>
+    <div class="container pt-5 main ">
+        <div class="row">
+            <div class="onlineContainer col-md-3">
+                <div class="card wholeCon">
+                    <div class="card-header" >
+                        <h3 class="text-center title">Group Chat </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="content-body">
+                            <p class="text-dark bold">• Online •</p>
+                            <div id="activeUser">
+                                <div id="users"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 ">
+                <div class="card wholeCon">
+                    <div class="card-header">
+                        <h3 class="text-center title">Start Chatting Now!</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row content-body pl-4">
+                            <div class="message-container">
+                                <div id="messages">
+                                     <!-- convo area -->
+                                </div>
+                            </div>
+                            <div class="row align-items-end" style="width: 120%;">
+                                <div class="col">
+                                    <small>
+                                        <div id="divTyping" class="font-weight-bold ml-1"></div>
+                                    </small>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Enter your message..." aria-label="message" id="message-input" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-dark send-btn " id="basic-addon2">Send</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="chat.js"></script>
+</body>
+
+</html>

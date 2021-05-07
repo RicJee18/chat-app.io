@@ -1,0 +1,95 @@
+LoginDiv::-webkit-scrollbar {
+    width: 2px;
+    margin: none;
+    height: 2px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: red;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: red;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: red;
+}
+
+.content-body {
+    height: 400px!important;
+    max-height:400px!important;
+    width: 100%;
+}
+
+.message-container {
+    height: 350px!important;
+    max-height: 350px!important;
+    width: 100%;
+    overflow: auto;
+}
+
+body {
+    font: 13px Helvetica, Arial;
+    background-image: url("image.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#LoginDiv {
+    margin-top: 20%;
+    height: 30%;
+    width: 30%;
+    margin-left: 35%;
+}
+
+.leftSmg {
+    text-align: right;
+    background-color: #F0F8FF;
+    display: block;
+    border-radius: 15px;
+    padding:15px;
+    word-wrap: break-word;
+    overflow-x: hidden;
+    width: max-content;
+    clear: both;
+    float: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.rightSmg {
+    text-align: right;
+    background-color: #F0F8FF;
+    display: block;
+    border-radius: 20px;
+    padding: 10px 20px;
+    word-wrap: break-word;
+    overflow-x: hidden;
+    width: max-content;
+    clear: both;
+    float: right;
+}
+
+span {
+    font-size: 20px;
+}
+
+.typing {
+    float: left;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+
+.title{
+    font-family: 'Great Vibes';
+    font-size: 40px;
+    font-weight: bold;
+    color: darkslateblue;
+}
+.wholeCon{
+    background: linear-gradient(to top right, #33ccff 0%, #6666ff 100%);
+}

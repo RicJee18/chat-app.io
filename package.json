@@ -1,0 +1,28 @@
+{
+    "name": "ChatApplication",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon index.js"
+    },
+    "repository": {
+        "type": "git"
+    },
+    "keywords": [
+        "node"
+    ],
+    "author": "Girly",
+    "license": "ISC",
+    "bugs": {
+
+    },
+    "engines": {
+        "node": "10.15"
+    },
+    "dependencies": {
+        "express": "^4.15.2",
+        "socket.io": "^1.7.3"
+    }
+}
