@@ -46,13 +46,15 @@ io.on('connection', function(socket) {
         io.emit("stop-typing", data);
     });
 
-    socket.once('disconnect', function() {
+    socket.on('disconnect', function() {
         for (let i = 0; i < users.length; ++i) {
             if (users[i].username == actualuser) {
                 users.splice(i, 1);
             }
         }
-        io.emit('logout', users)
+        io.emit('logout', users);
+        // console.log("disonnect");
+        // io.emit('disconnect', users)
     })
 
 });

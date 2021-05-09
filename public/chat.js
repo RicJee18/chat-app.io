@@ -5,6 +5,7 @@ $(document).ready(() => {
         $("#btnStart").attr("disabled", true);
         var socket = io();
         var usernamei = "";
+
         $("#username").keyup(function() {
             if ($("#username").val()) {
                 $("#btnStart").attr("disabled", false);
@@ -13,6 +14,7 @@ $(document).ready(() => {
                 $("#btnStart").attr("disabled", true);
             }
         })
+
         $("#btnStart").click(function() {
             usernamei = $("#username").val();
             $("#LoginDiv").hide();
@@ -40,6 +42,7 @@ $(document).ready(() => {
                 $(".send-btn").click();
             }
         })
+
         $(document).on('click', '.send-btn', () => {
             let message = $("#message-input").val();
             socket.emit('chat message', { username: usernamei, msg: message });
@@ -63,7 +66,10 @@ $(document).ready(() => {
             if (sender != usernamei) {
                 $('#messages').append(
                     $('<p>', { class: "leftSmg" }).append(`<span><b>${nickname}</b> </span>: ${sms}`));
-                $("#chatbox").scrollTop($("#chatbox")[0].scrollHeight);
+
+                    console.log($(".leftSmg")[$(".leftSmg").length - 1].offsetHeight );
+                    console.log($("#messages"));
+                    $("#messages").scrollTop($("#chatbox")[0].scrollHeight);
             }
         });
 
@@ -73,7 +79,7 @@ $(document).ready(() => {
             for (let i = 0; i < msg.length; ++i) {
                 if (!current.includes(msg[i].username) && msg[i].username != usernamei) {
                     $("#users").append(
-                        '<span><i class="fas fa-user"></i></span>',
+                        '<span class="dot"></i></span>',
                         $("<span>").text("  " + msg[i].username), $("<br>"));
                     current.push(msg[i].username);
                 }
@@ -86,7 +92,7 @@ $(document).ready(() => {
         socket.on("typing", function(data) {
             if (data.username != usernamei && !now_typing.includes(data.username)) {
                 now_typing.push(data.username);
-                $("#divTyping").append($("<span>").text("..."))
+                $("#divTyping").append($("<span>").text(`${data.username} is typing!`))
             }
         });
 
@@ -109,6 +115,12 @@ $(document).ready(() => {
             if (data != $("#username").val()) {
                 $(document).append($("<p>", { class: 'top_right' }).text(data + " left the chat"))
             }
+        })
+
+        socket.on('logout' , function(data){
+            $('#messages').append(
+                $('<p>', { class: "leftSmg" }).append(`<span><em>${data[0].username} left the group.</em></span>`));
+
         })
 
     });
